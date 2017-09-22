@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" 
+prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+fx:controller="DisplayMenuController">
+   <children>
+      <Label fx:id="displayLabel" alignment="CENTER" contentDisplay="TOP" layoutX="158.0" layoutY="101.0" prefHeight="138.0" prefWidth="284.0" text="YES" textAlignment="CENTER" />
+      <Button fx:id="displayMenuBackButton" layoutX="276.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleDisplayMenuBackButton" text="Back" />
+   </children>
+</AnchorPane>
