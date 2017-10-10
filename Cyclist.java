@@ -1,14 +1,18 @@
+import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.Random;
 
-public class Cyclist extends Athletes {
+public class Cyclist extends Athletes implements Serializable {
 
 	private String ID;
 	private String name;
 	private String age;
 	private String stateOfAustralia;
 	private int point;
-
+	
+	public Cyclist() {
+	}
+	
 	public Cyclist(String cID, String name, String age, String stateOfAustralia, int point) {
 		super(cID, name, age, stateOfAustralia, point);
 	}

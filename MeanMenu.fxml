@@ -1,17 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MeanMenuController">
+<AnchorPane fx:id="meanPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MeanMenuController">
    <children>
-      <Button fx:id="selectGameButton" layoutX="237.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleSelectGameButton" prefHeight="27.0" prefWidth="126.0" text="Select a game" />
-      <Button fx:id="predictButton" layoutX="237.0" layoutY="129.0" mnemonicParsing="false" onAction="#handlePredictButton" prefHeight="27.0" prefWidth="126.0" text="Predict the game" />
-      <Button fx:id="runButton" layoutX="237.0" layoutY="163.0" mnemonicParsing="false" onAction="#handleRunButton" prefHeight="27.0" prefWidth="126.0" text="Run the game" />
-      <Button fx:id="exitButton" layoutX="237.0" layoutY="266.0" mnemonicParsing="false" onAction="#handleExitButton" prefHeight="27.0" prefWidth="126.0" text="Save/Exit" />
-      <Button fx:id="displayPointButton" layoutX="237.0" layoutY="232.0" mnemonicParsing="false" onAction="#handleDisplayPointButton" prefHeight="27.0" prefWidth="126.0" text="Display all points" />
-      <Button fx:id="displayResultButton" layoutX="237.0" layoutY="197.0" mnemonicParsing="false" onAction="#handleDisplayResultButton" text="Display all results" />
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@../../../../Desktop/background.gif" />
+         </image>
+      </ImageView>
+      <Button fx:id="selectGameButton" layoutX="237.0" layoutY="139.0" mnemonicParsing="false" onAction="#handleSelectGameButton" prefHeight="27.0" prefWidth="126.0" text="Select a game">
+         <font>
+            <Font name="Avenir Black" size="13.0" />
+         </font></Button>
+      <Button fx:id="predictButton" layoutX="237.0" layoutY="174.0" mnemonicParsing="false" onAction="#handlePredictButton" prefHeight="27.0" prefWidth="126.0" text="Predict">
+         <font>
+            <Font name="Avenir Black" size="13.0" />
+         </font></Button>
+      <Button fx:id="runButton" layoutX="237.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleRunButton" prefHeight="27.0" prefWidth="126.0" text=" Start ">
+         <font>
+            <Font name="Avenir Black" size="13.0" />
+         </font></Button>
+      <Button fx:id="exitButton" layoutX="236.0" layoutY="317.0" mnemonicParsing="false" onAction="#handleExitButton" prefHeight="27.0" prefWidth="126.0" text="Save/Exit">
+         <font>
+            <Font name="Avenir Black" size="13.0" />
+         </font></Button>
+      <Button fx:id="displayPointButton" layoutX="237.0" layoutY="277.0" mnemonicParsing="false" onAction="#handleDisplayPointButton" prefHeight="33.0" prefWidth="126.0" text="Display points">
+         <font>
+            <Font name="Avenir Black Oblique" size="13.0" />
+         </font></Button>
+      <Button fx:id="displayResultButton" layoutX="237.0" layoutY="242.0" mnemonicParsing="false" onAction="#handleDisplayResultButton" text="Display all results">
+         <font>
+            <Font name="Avenir Black" size="13.0" />
+         </font></Button>
+      <Button fx:id="readButton" layoutX="271.0" layoutY="354.0" mnemonicParsing="false" onAction="#handleReadButton" text="Read">
+         <font>
+            <Font name="Avenir Black" size="13.0" />
+         </font></Button>
    </children>
 </AnchorPane>

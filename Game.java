@@ -1,12 +1,16 @@
+import java.io.Serializable;
 import java.util.HashMap;
 
-public abstract class Game {
+public abstract class Game implements Serializable{
 
 	private String gameID;
 	private boolean result = false;
 	private String gameType;
 	private String predict;
 	
+	public Game(){
+		
+	}
 	
 	public Game(String gameID, String gameType, boolean result, String predic){
 		this.gameID = gameID;

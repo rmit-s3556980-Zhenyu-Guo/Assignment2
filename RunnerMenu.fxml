@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CyclistMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RunnerMenuController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0">
          <image>
@@ -22,14 +22,14 @@
                         <Label text="Cyclist:" />
                         <VBox spacing="5.0">
                            <children>
-                              <CheckBox fx:id="c1Box" layoutX="60.0" layoutY="33.0" mnemonicParsing="false" text="c1" />
-                              <CheckBox fx:id="c2Box" layoutX="60.0" layoutY="51.0" mnemonicParsing="false" text="c2" />
-                              <CheckBox fx:id="c3Box" layoutX="60.0" layoutY="69.0" mnemonicParsing="false" text="c3" />
-                              <CheckBox fx:id="c4Box" layoutX="60.0" layoutY="87.0" mnemonicParsing="false" text="c4" />
-                              <CheckBox fx:id="c5Box" layoutX="60.0" layoutY="105.0" mnemonicParsing="false" text="c5" />
-                              <CheckBox fx:id="c6Box" layoutX="60.0" layoutY="123.0" mnemonicParsing="false" text="c6" />
-                              <CheckBox fx:id="c7Box" layoutX="60.0" layoutY="141.0" mnemonicParsing="false" text="c7" />
-                              <CheckBox fx:id="c8Box" layoutX="60.0" layoutY="159.0" mnemonicParsing="false" text="c8" />
+                              <CheckBox fx:id="c1Box" disable="true" layoutX="60.0" layoutY="33.0" mnemonicParsing="false" text="c1" />
+                              <CheckBox fx:id="c2Box" disable="true" layoutX="60.0" layoutY="51.0" mnemonicParsing="false" text="c2" />
+                              <CheckBox fx:id="c3Box" disable="true" layoutX="60.0" layoutY="69.0" mnemonicParsing="false" text="c3" />
+                              <CheckBox fx:id="c4Box" disable="true" layoutX="60.0" layoutY="87.0" mnemonicParsing="false" text="c4" />
+                              <CheckBox fx:id="c5Box" disable="true" layoutX="60.0" layoutY="105.0" mnemonicParsing="false" text="c5" />
+                              <CheckBox fx:id="c6Box" disable="true" layoutX="60.0" layoutY="123.0" mnemonicParsing="false" text="c6" />
+                              <CheckBox fx:id="c7Box" disable="true" layoutX="60.0" layoutY="141.0" mnemonicParsing="false" text="c7" />
+                              <CheckBox fx:id="c8Box" disable="true" layoutX="60.0" layoutY="159.0" mnemonicParsing="false" text="c8" />
                            </children>
                         </VBox>
                      </children>
@@ -56,14 +56,14 @@
                         <Label text="Sprinter" />
                         <VBox spacing="5.0">
                            <children>
-                              <CheckBox disable="true" layoutX="60.0" layoutY="33.0" mnemonicParsing="false" text="CheckBox" />
-                              <CheckBox disable="true" layoutX="60.0" layoutY="51.0" mnemonicParsing="false" text="CheckBox" />
-                              <CheckBox disable="true" layoutX="60.0" layoutY="69.0" mnemonicParsing="false" text="CheckBox" />
-                              <CheckBox disable="true" layoutX="60.0" layoutY="87.0" mnemonicParsing="false" text="CheckBox" />
-                              <CheckBox disable="true" layoutX="60.0" layoutY="105.0" mnemonicParsing="false" text="CheckBox" />
-                              <CheckBox disable="true" layoutX="60.0" layoutY="123.0" mnemonicParsing="false" text="CheckBox" />
-                              <CheckBox disable="true" layoutX="60.0" layoutY="141.0" mnemonicParsing="false" text="CheckBox" />
-                              <CheckBox disable="true" layoutX="60.0" layoutY="159.0" mnemonicParsing="false" text="CheckBox" />
+                              <CheckBox fx:id="r1Box" layoutX="60.0" layoutY="33.0" mnemonicParsing="false" text="r1" />
+                              <CheckBox fx:id="r2Box" layoutX="60.0" layoutY="51.0" mnemonicParsing="false" text="r2" />
+                              <CheckBox fx:id="r3Box" layoutX="60.0" layoutY="69.0" mnemonicParsing="false" text="r3" />
+                              <CheckBox fx:id="r4Box" layoutX="60.0" layoutY="87.0" mnemonicParsing="false" text="r4" />
+                              <CheckBox fx:id="r5Box" layoutX="60.0" layoutY="105.0" mnemonicParsing="false" text="r5" />
+                              <CheckBox fx:id="r6Box" layoutX="60.0" layoutY="123.0" mnemonicParsing="false" text="r6" />
+                              <CheckBox fx:id="r7Box" layoutX="60.0" layoutY="141.0" mnemonicParsing="false" text="r7" />
+                              <CheckBox fx:id="r8Box" layoutX="60.0" layoutY="159.0" mnemonicParsing="false" text="r8" />
                            </children>
                         </VBox>
                      </children>
@@ -118,7 +118,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="cyclingBackButton" layoutX="376.0" layoutY="92.0" mnemonicParsing="false" onAction="#handleCyclingBackButton" text="Back" />
+                  <Button fx:id="runningBackButton" layoutX="376.0" layoutY="92.0" mnemonicParsing="false" onAction="#handleRunningBackButton" text="Back" />
                </children>
             </AnchorPane>
          </children>

@@ -1,11 +1,16 @@
+import java.io.Serializable;
 
-public abstract class Athletes {
+public abstract class Athletes implements Serializable{
 
 	private String ID;
 	private String name;
 	private String age;
 	private String stateOfAustralia;
 	private int point;
+	
+	public Athletes(){
+		
+	}
 	
 	public Athletes(String ID, String name, String age, String stateOfAustralia, int point){
 		this.ID = ID;

@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.text.DecimalFormat;
 
-public class Swimmer extends Athletes{
+public class Swimmer extends Athletes implements Serializable{
 	
 	private String ID;
 	private String name;
@@ -8,6 +9,10 @@ public class Swimmer extends Athletes{
 	private String stateOfAustralia;
 	private int point;
 
+	public Swimmer(){
+		
+	}
+	
 	public Swimmer(String sID, String name, String age, String stateOfAustralia, int point) {
 		super(sID, name, age, stateOfAustralia, point);
 	}

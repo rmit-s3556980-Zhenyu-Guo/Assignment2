@@ -1,10 +1,15 @@
+import java.io.Serializable;
 
-public class Official {
+public class Official implements Serializable{
 
 	private String ID;
 	private String name;
 	private String age;
 	private String stateOfAustralia;
+	
+	public Official(){
+		
+	}
 	
 	public Official(String ID, String name, String age, String stateOfAustralia){
 		this.ID = ID;

@@ -30,16 +30,63 @@ public class PerdictionWindow {
 				choiceBox.getItems().add(superID);
 			}
 		}
+		else if(MeanMenuController.data.getGameType().equals("Running")){
+			for(int i = 0; i<MeanMenuController.data.getRunnerInGame().size(); i++){
+				String runnerID;
+				Sprinter r = (Sprinter) MeanMenuController.data.getRunnerInGame().get(i);
+				runnerID = r.getID();
+				choiceBox.getItems().add(runnerID);
+			}
+			for(int i = 0; i<MeanMenuController.data.getSuperAthletesInGame().size(); i++){
+				String superID;
+				SuperAthletes sa = (SuperAthletes) MeanMenuController.data.getSuperAthletesInGame().get(i);
+				superID = sa.getID();
+				choiceBox.getItems().add(superID);
+			}
+		}
+		else if(MeanMenuController.data.getGameType().equals("Swimming")){
+			for(int i = 0; i<MeanMenuController.data.getSwimmerInGame().size(); i++){
+				String swimmerID;
+				Swimmer s = (Swimmer) MeanMenuController.data.getSwimmerInGame().get(i);
+				swimmerID = s.getID();
+				choiceBox.getItems().add(swimmerID);
+			}
+			for(int i = 0; i<MeanMenuController.data.getSuperAthletesInGame().size(); i++){
+				String superID;
+				SuperAthletes sa = (SuperAthletes) MeanMenuController.data.getSuperAthletesInGame().get(i);
+				superID = sa.getID();
+				choiceBox.getItems().add(superID);
+			}
+		}
+		
 		Label label = new Label();
 		label.setText("Please Perdict a winner!");
 		Button submit = new Button("Submit");
+		
 		submit.setOnAction(e -> {
-			String athleteID = choiceBox.getValue();
-			MeanMenuController.data.setPredict(athleteID);
-			System.out.println("You predict " + athleteID + " as winner!");
-			MeanMenuController.data.getPredictList().put(MeanMenuController.data.getCycling().getGameID(), athleteID);
-			window.close();
-			});
+			if(MeanMenuController.data.getGameType().equals("Cycling")){
+				String athleteID = choiceBox.getValue();
+				MeanMenuController.data.setPredict(athleteID);
+				System.out.println("You predict " + athleteID + " as winner!");
+				MeanMenuController.data.getPredictList().put(MeanMenuController.data.getCycling().getGameID(), athleteID);
+				window.close();
+			}
+			else if(MeanMenuController.data.getGameType().equals("Running")){
+				String athleteID = choiceBox.getValue();
+				MeanMenuController.data.setPredict(athleteID);
+				System.out.println("You predict " + athleteID + " as winner!");
+				MeanMenuController.data.getPredictList().put(MeanMenuController.data.getRunning().getGameID(), athleteID);
+				window.close();
+			}
+			else if(MeanMenuController.data.getGameType().equals("Swimming")){
+				String athleteID = choiceBox.getValue();
+				MeanMenuController.data.setPredict(athleteID);
+				System.out.println("You predict " + athleteID + " as winner!");
+				MeanMenuController.data.getPredictList().put(MeanMenuController.data.getSwimming().getGameID(), athleteID);
+				window.close();
+			}
+			
+		});
 		
 		VBox layout = new VBox(10);
         layout.getChildren().addAll(label, choiceBox, submit);

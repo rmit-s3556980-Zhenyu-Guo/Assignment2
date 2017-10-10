@@ -1,7 +1,8 @@
+import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.Random;
 
-public class SuperAthletes extends Athletes{
+public class SuperAthletes extends Athletes implements Serializable{
 
 	private String ID;
 	private String name;
@@ -9,6 +10,9 @@ public class SuperAthletes extends Athletes{
 	private String stateOfAustralia;
 	private int point;
 	
+	public SuperAthletes(){
+		
+	}
 	public SuperAthletes(String ID, String name, String age, String stateOfAustralia, int point) {
 		super(ID, name, age, stateOfAustralia, point);
 		// TODO Auto-generated constructor stub

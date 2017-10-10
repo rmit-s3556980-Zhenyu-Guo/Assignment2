@@ -267,9 +267,9 @@ public class Driver {
 					if(backOrNot.equals("yes")){
 						if(data.getCyclingGameNumber() != 1){
 							data.setCyclingGameNumber(data.getCyclingGameNumber() - 1);
-							data.setCycling(null);;
+							data.setCycling(null);
 							data.setGameType(null);
-							data.setOfficial(null);;
+							data.setOfficial(null);
 						}
 						System.out.println("The game has been concled.");
 						gameMenuControl();

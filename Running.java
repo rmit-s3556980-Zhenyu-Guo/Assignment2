@@ -1,13 +1,18 @@
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 
-public class Running extends Game{
+public class Running extends Game implements Serializable{
 	private String gameID;
 	private boolean result = false;
 	private String gameType;
 	private String predict;
+	
+	public Running(){
+		
+	}
 	
 	public Running(String gameID, String gameType, boolean result,String predict) {
 		super(gameID, gameType, result, predict);

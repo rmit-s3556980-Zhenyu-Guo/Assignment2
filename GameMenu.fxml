@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -7,9 +8,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameMenuController">
    <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@../../../../Desktop/background.gif" />
+         </image>
+      </ImageView>
       <Button fx:id="cyclingButton" layoutX="260.0" layoutY="131.0" mnemonicParsing="false" onAction="#handleCyclingButton" prefHeight="27.0" prefWidth="81.0" text="Cycling" />
-      <Button layoutX="260.0" layoutY="169.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="81.0" text="Running" />
+      <Button fx:id="runningButton" layoutX="260.0" layoutY="169.0" mnemonicParsing="false" onAction="#handleRunningButton" prefHeight="27.0" prefWidth="81.0" text="Running" />
       <Button fx:id="backMeanMenuButton" layoutX="260.0" layoutY="242.0" mnemonicParsing="false" onAction="#handleBackMeanMenuButton" prefHeight="27.0" prefWidth="81.0" text="Back" />
-      <Button layoutX="260.0" layoutY="204.0" mnemonicParsing="false" text="Swimming" />
+      <Button fx:id="swimmingButton" layoutX="260.0" layoutY="204.0" mnemonicParsing="false" onAction="#handleSwimmingButton" text="Swimming" />
    </children>
 </AnchorPane>

@@ -1,9 +1,10 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 
-public class Data {
+public class Data implements Serializable{
 
 	private HashMap<String, Sprinter> sprinterList = new HashMap<String, Sprinter>();
 	private HashMap<String, Swimmer> swimmerList = new HashMap<String, Swimmer>();
@@ -18,6 +19,7 @@ public class Data {
 	private ArrayList<Swimmer> swimmerInGame = new ArrayList<Swimmer>();
 	private ArrayList<Sprinter> runnerInGame = new ArrayList<Sprinter>();
 	private ArrayList<Official> officialInGame = new ArrayList<Official>();
+	private ArrayList<String> choiseBuffer = new ArrayList<String>();
 	
 	private Swimming s;
 	private Running r;
@@ -31,6 +33,10 @@ public class Data {
 	private int runningGameNumber = 1;
 	private int swimmingGameNumber = 1;
 	private String reStartUse = null;
+	
+	public Data(){
+		
+	}
 	
 	
 	public void Officer(){
@@ -71,7 +77,6 @@ public class Data {
 		sprinterList.put("r6", new Sprinter("r6", "Lucas", "ff", "aa", 0));
 		sprinterList.put("r7", new Sprinter("r7", "William", "ff", "aa", 0));
 		sprinterList.put("r8", new Sprinter("r8", "Nathan", "ff", "aa", 0));
-		sprinterList.put("r9", new Sprinter("r9", "Joseph", "ff", "aa", 0));
 	}
 	public void Swimmer(){
 		swimmerList.put("s1", new Swimmer("s1", "Justin", "ff", "aa", 0));
@@ -220,6 +225,12 @@ public class Data {
 	}
 	public void setOfficialInGame(ArrayList<Official> officialInGame) {
 		this.officialInGame = officialInGame;
+	}
+	public ArrayList<String> getChoiseBuffer() {
+		return choiseBuffer;
+	}
+	public void setChoiseBuffer(ArrayList<String> choiseBuffer) {
+		this.choiseBuffer = choiseBuffer;
 	}
 	
 	

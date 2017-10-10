@@ -1,12 +1,16 @@
+import java.io.Serializable;
 import java.text.DecimalFormat;
 
-public class Sprinter extends Athletes{
+public class Sprinter extends Athletes implements Serializable{
 	private String ID;
 	private String name;
 	private String age;
 	private String stateOfAustralia;
 	private int point;
-
+	
+	public Sprinter(){
+		
+	}
 	public Sprinter(String rID, String name, String age, String stateOfAustralia, int point) {
 		super(rID, name, age, stateOfAustralia, point);
 		

@@ -1,8 +1,6 @@
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,15 +9,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class CyclistMenuController {
+public class SwimmerMenuController {
 	@FXML
-	private Button cyclingBackButton, addAthletesID, addRefereeButton;
+	private Button swimmingBackButton, addAthletesID, addRefereeButton;
 	@FXML
 	private RadioButton refereeButton1, refereeButton2, refereeButton3, refereeButton4, refereeButton5, refereeButton6;
 	@FXML
@@ -67,10 +63,10 @@ public class CyclistMenuController {
 	}
 
 	
-	public void handleCyclingBackButton(ActionEvent event) throws IOException {
+	public void handleSwimmingBackButton(ActionEvent event) throws IOException {
 		if (MeanMenuController.data.getOfficialInGame().size() != 0
 				&& (MeanMenuController.data.getSuperAthletesInGame().size()
-						+ MeanMenuController.data.getCyclistInGame().size()) >= 5) {
+						+ MeanMenuController.data.getSwimmerInGame().size()) >= 5) {
 			Parent secondParent = FXMLLoader.load(getClass().getResource("GameMenu.fxml"));
 			Scene secondScene = new Scene(secondParent);
 
@@ -80,11 +76,11 @@ public class CyclistMenuController {
 			window.setScene(secondScene);
 			window.show();
 		} else if ((MeanMenuController.data.getSuperAthletesInGame().size()
-				+ MeanMenuController.data.getCyclistInGame().size()) < 5) {
+				+ MeanMenuController.data.getSwimmerInGame().size()) < 5) {
 			ChoiceWindow cw = new ChoiceWindow();
 			if(cw.display("There are less than 5 athletes in the game."+"\nWould you want to cancled game and go back?")){
-				MeanMenuController.data.setCyclingGameNumber(MeanMenuController.data.getCyclingGameNumber() - 1);
-				MeanMenuController.data.setCycling(null);
+				MeanMenuController.data.setSwimmingGameNumber(MeanMenuController.data.getSwimmingGameNumber() - 1);
+				MeanMenuController.data.setSwimming(null);
 				MeanMenuController.data.setGameType(null);
 				MeanMenuController.data.setOfficial(null);
 				Parent secondParent = FXMLLoader.load(getClass().getResource("GameMenu.fxml"));
@@ -99,8 +95,8 @@ public class CyclistMenuController {
 		} else {
 			ChoiceWindow cw= new ChoiceWindow();			
 			if(cw.display("There are no referee."+"\nWould you want to cancled game and go back?")){
-				MeanMenuController.data.setCyclingGameNumber(MeanMenuController.data.getCyclingGameNumber() - 1);
-				MeanMenuController.data.setCycling(null);
+				MeanMenuController.data.setSwimmingGameNumber(MeanMenuController.data.getSwimmingGameNumber() - 1);
+				MeanMenuController.data.setSwimming(null);
 				MeanMenuController.data.setGameType(null);
 				MeanMenuController.data.setOfficial(null);
 				Parent secondParent = FXMLLoader.load(getClass().getResource("GameMenu.fxml"));
@@ -118,9 +114,9 @@ public class CyclistMenuController {
 	
 	public void handleAddAthletesID(ActionEvent event) {
 		//ArrayList<String> choiseBuffer = new ArrayList<String> ();
-		if (MeanMenuController.data.getGameType().equals("Cycling")) {
+		if (MeanMenuController.data.getGameType().equals("Swimming")) {
 			if(checkChoise()){	
-				choiseCyclistControl();
+				choiseSwimmerControl();
 				choiseSuperAthletesControl();
 				///MeanMenuController.data.setChoiseBuffer(choiseBuffer);
 			} else {
@@ -134,31 +130,32 @@ public class CyclistMenuController {
 				//MeanMenuController.data.setChoiseBuffer(choiseBuffer);
 			}
 		}
-		if (MeanMenuController.data.getGameType().equals("Swimming"))
-			choiseSwimmerControl();
+		
 	}
 
 	public void choiseSwimmerControl() {
 
 		if (s1Box.isSelected())
-			addCyclistInGame(s1Box);
+			addSwimmerInGame(s1Box);
 		if (s2Box.isSelected())
-			addCyclistInGame(s2Box);
+			addSwimmerInGame(s2Box);
 		if (s3Box.isSelected())
-			addCyclistInGame(s3Box);
+			addSwimmerInGame(s3Box);
 		if (s4Box.isSelected())
-			addCyclistInGame(s4Box);
+			addSwimmerInGame(s4Box);
 		if (s5Box.isSelected())
-			addCyclistInGame(s5Box);
+			addSwimmerInGame(s5Box);
 		if (s6Box.isSelected())
-			addCyclistInGame(s6Box);
+			addSwimmerInGame(s6Box);
 		if (s7Box.isSelected())
-			addCyclistInGame(s7Box);
+			addSwimmerInGame(s7Box);
 		if (s8Box.isSelected())
-			addCyclistInGame(s8Box);
+			addSwimmerInGame(s8Box);
+		
 	}
 	public void addSwimmerInGame(CheckBox checkbox) {
-		if (MeanMenuController.data.getSwimmerInGame().size() < 8) {
+		if (MeanMenuController.data.getSuperAthletesInGame().size()
+				+ MeanMenuController.data.getSwimmerInGame().size() < 8) {
 			System.out.println("Yes" + checkbox.getText());
 			String ID = checkbox.getText();
 			Swimmer s = (Swimmer) MeanMenuController.data.getSwimmerList().get(ID);
@@ -166,10 +163,10 @@ public class CyclistMenuController {
 				System.out.println(ID + " is in the game.");
 			} else {
 				MeanMenuController.data.getSwimmerInGame().add(s);
-				System.out.println("Cyclist in game: " + MeanMenuController.data.getSwimmerInGame().size());
+				System.out.println("Swimmer in game: " + MeanMenuController.data.getSwimmerInGame().size());
 			}
 		} else {
-			System.out.println("Cyclist " + checkbox.getText() + " can't be add in game.");
+			System.out.println("Swimmer " + checkbox.getText() + " can't be add in game.");
 			System.out.println("Because there are 8 athletes in the game.");
 		}
 	}
@@ -227,22 +224,22 @@ public class CyclistMenuController {
 	}
 	
 	public boolean checkChoise(){
-		if (c1Box.isSelected())
-			addChoiceBuffer(c1Box);
-		if (c2Box.isSelected())
-			addChoiceBuffer(c2Box);
-		if (c3Box.isSelected())
-			addChoiceBuffer(c3Box);
-		if (c4Box.isSelected())
-			addChoiceBuffer(c4Box);
-		if (c5Box.isSelected())
-			addChoiceBuffer(c5Box);
-		if (c6Box.isSelected())
-			addChoiceBuffer(c6Box);
-		if (c7Box.isSelected())
-			addChoiceBuffer(c7Box);
-		if (c8Box.isSelected())
-			addChoiceBuffer(c8Box);
+		if (s1Box.isSelected())
+			addChoiceBuffer(s1Box);
+		if (s2Box.isSelected())
+			addChoiceBuffer(s2Box);
+		if (s3Box.isSelected())
+			addChoiceBuffer(s3Box);
+		if (s4Box.isSelected())
+			addChoiceBuffer(s4Box);
+		if (s5Box.isSelected())
+			addChoiceBuffer(s5Box);
+		if (s6Box.isSelected())
+			addChoiceBuffer(s6Box);
+		if (s7Box.isSelected())
+			addChoiceBuffer(s7Box);
+		if (s8Box.isSelected())
+			addChoiceBuffer(s8Box);
 		
 		
 		if (sa01Box.isSelected())
@@ -290,7 +287,7 @@ public class CyclistMenuController {
 	public void addSuperAthletesInGame(CheckBox checkBox) {
 		int number = 0;
 		number = MeanMenuController.data.getSuperAthletesInGame().size()
-				+ MeanMenuController.data.getCyclistInGame().size();
+				+ MeanMenuController.data.getSwimmerInGame().size();
 		if (number < 8) {
 			System.out.println("Yes" + checkBox.getText());
 			String ID = checkBox.getText();
@@ -301,36 +298,12 @@ public class CyclistMenuController {
 				MeanMenuController.data.getSuperAthletesInGame().add(sa);
 				System.out.println("SuperAthletes in game: " + MeanMenuController.data.getSuperAthletesInGame().size());
 				System.out.println("Athletes in game: " + (MeanMenuController.data.getSuperAthletesInGame().size()
-						+ MeanMenuController.data.getCyclistInGame().size()));
+						+ MeanMenuController.data.getSwimmerInGame().size()));
 			}
 		} else {
-			System.out.println("Cyclist " + checkBox.getText() + " can't be add in game.");
+			System.out.println("Swimmer " + checkBox.getText() + " can't be add in game.");
 			System.out.println("Because there are 8 athletes in the game.");
 		}
 	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
